@@ -15,5 +15,7 @@ namespace TechyJobs.Data
         }
         public DbSet<Job> Job { get; set; }
         public DbSet<Recruiter> Recruiter { get; set; }
+
+        public DbSet<ApplicationUser> User{ get; set; }
     }
 }

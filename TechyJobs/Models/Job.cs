@@ -11,6 +11,9 @@ namespace TechyJobs.Models
         public int JobId { get; set; }
 
         [Required]
+        public string UserId { get; set; }
+
+        [Required]
         public string Title { get; set; }
         [Required]
         public string Company { get; set; }

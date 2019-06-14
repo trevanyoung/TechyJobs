@@ -9,6 +9,9 @@ namespace TechyJobs.Models
     public class Recruiter
     {
         public int RecruiterId { get; set; }
+
+        [Required]
+        public string UserId { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]
@@ -16,6 +19,6 @@ namespace TechyJobs.Models
         [Required]
         public string Company { get; set; }
 
-        public string Detials { get; set; }
+        public string Details { get; set; }
     }
 }
