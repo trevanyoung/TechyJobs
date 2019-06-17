@@ -3,8 +3,14 @@
 @{
     ViewData["Title"] = "Index";
 }
+<link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+<style>
+    .recruitersIndex {
+        font-family: 'Audiowide';
+    }
+</style>
 
-<h1>Recruiters</h1>
+<h1 class="recruitersIndex">Recruiters</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -21,33 +27,34 @@
             <th>
                 @Html.DisplayNameFor(model => model.Company)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Details)
-            </th>
+            </th>*@
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Company)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Details)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.RecruiterId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.RecruiterId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.RecruiterId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Details)
+                </td>*@
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.RecruiterId">Edit</a> 
+                    <a asp-action="Details" asp-route-id="@item.RecruiterId">Details</a> 
+                    <a asp-action="Delete" asp-route-id="@item.RecruiterId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -1,8 +1,49 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+<style>
+    .display-4 {
+        font-family: 'Audiowide';
+    }
 
-<div class="text-center">
-    <h1 class="display-4">Techy Jobs</h1>
-    <p>Your personal career progress tracker <a href="https://localhost:5001/Jobs">Click here to get started ! </a></p>
-</div>
+    .text-center{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+    }
+
+    .TechyJobsLogo{
+        text-align: center;
+    }
+
+    .techyJobsIntroLine{
+        text-align: center;
+        color: white;
+    }
+
+    techyJobsIntroLink{
+        text-align:center;
+    }
+
+    a{
+        color: white;
+    }
+
+    .bg{
+        background-image:url("https://images.unsplash.com/photo-1526498460520-4c246339dccb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+        /*background-image:url("~/TechyJobsBackground.jpeg");*/
+        background-size:cover;
+        background-position:center;
+    }
+</style>
+<body class="bg">
+    <div class="text-center">
+        <div class="TechyJobsLogo">
+            <img src="~/TechyJobsLogoWhite.png" href="~/TechyJobsLogo">
+        </div>
+        @*<h1 class="display-4">Techy Jobs</h1>*@
+        <p class="techyJobsIntroLine">Your personal career progress tracker </p>
+        <p class="techyJobsIntroLink"><a href="https://localhost:5001/Jobs">Lets get started ! </a></p>
+    </div>
+</body>

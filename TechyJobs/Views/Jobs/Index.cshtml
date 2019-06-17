@@ -3,8 +3,14 @@
 @{
     ViewData["Title"] = "Index";
 }
+<link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+<style>
+    .jobsIndex {
+        font-family: 'Audiowide';
+    }
+</style>
 
-<h1>Jobs</h1>
+<h1 class="jobsIndex">Jobs</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -21,33 +27,34 @@
             <th>
                 @Html.DisplayNameFor(model => model.Location)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Description)
-            </th>
+            </th>*@
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Company)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.JobId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.JobId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.JobId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>*@
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.JobId">Edit</a> 
+                    <a asp-action="Details" asp-route-id="@item.JobId">Details</a> 
+                    <a asp-action="Delete" asp-route-id="@item.JobId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
