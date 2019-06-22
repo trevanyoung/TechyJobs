@@ -29,7 +29,9 @@ namespace TechyJobs.Controllers
         [Authorize]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Recruiter.ToListAsync());
+            var loggedInUser = await GetCurrentUserAsync();
+            var applicationDbContext = _context.Recruiter.Where(recruiter => recruiter.UserId == loggedInUser.Id);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Recruiters/Details/5
@@ -94,7 +96,17 @@ namespace TechyJobs.Controllers
             {
                 return NotFound();
             }
-            return View(recruiter);
+            //return View(recruiter);
+            var loggedInUser = await GetCurrentUserAsync();
+            if (loggedInUser.Id == recruiter.UserId)
+            {
+
+                return View(recruiter);
+            }
+            else
+            {
+                return RedirectToAction(nameof(Index));
+            }
         }
 
         // POST: Recruiters/Edit/5

@@ -100,7 +100,16 @@ namespace TechyJobs.Controllers
             {
                 return NotFound();
             }
+            var loggedInUser = await GetCurrentUserAsync();
+            if (loggedInUser.Id == job.UserId)
+            {
+
             return View(job);
+            }
+            else
+            {
+                return RedirectToAction(nameof(Index));
+            }
         }
 
         // POST: Jobs/Edit/5

@@ -4,6 +4,17 @@
     ViewData["Title"] = "Edit";
 }
 
+<style>
+    .control-label {
+            font-size: 3vh;
+    }
+
+
+    .form-control{
+        padding:20px;
+    }
+
+</style>
 <h1>Edit</h1>
 
 <h4>Job</h4>
@@ -16,17 +27,17 @@
             <input type="hidden" asp-for="UserId" />
             <div class="form-group">
                 <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
+                <input asp-for="Title" class="form-control" style="font-size:20px;" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Company" class="control-label"></label>
-                <input asp-for="Company" class="form-control" />
+                <input asp-for="Company" class="form-control" style="font-size:20px;" />
                 <span asp-validation-for="Company" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Location" class="control-label"></label>
-                <input asp-for="Location" class="form-control" />
+                <input asp-for="Location" class="form-control" style="font-size:20px;" />
                 <span asp-validation-for="Location" class="text-danger"></span>
             </div>
             @*<div class="form-group">
@@ -36,7 +47,7 @@
             </div>*@
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
-                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                <textarea asp-for="Description" class="form-control" rows="5" style="font-size:20px;" ></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
